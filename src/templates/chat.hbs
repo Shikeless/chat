@@ -1,6 +1,17 @@
 <div class="users">
+	<div class="user-box">
+		<img class="user-image" src="./src/img/noImage.png">
+		<span id="user-name" style="bottom: 25px; left: 10px; position: relative;"><b>Добро пожаловать!</b>
+	</div>
+	<div class="members-box">
+		<span id="memmbers-number"><b>Участники ( )</b></span>
+		<div class="members-list">
+		</div>
+	</div>
 </div>
 <div class="chat">
+	<ul id="chat-list">
+	</ul>
 	<div class="login">
 		<b>Авторизация</b>
 		<div class="login-form-box">
@@ -9,6 +20,12 @@
     			<button class="button">Войти</button>
     		</div>
 		</div>
-
+	</div>
+	<div id="status">
+		offline
+	</div>
+	<div class="message">
+		<input id="mes" type="text" name="message" placeholder="Введите сообщение">
+		<button id="send" class="button">Отправить</button>
 	</div>
 </div>

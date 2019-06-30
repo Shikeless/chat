@@ -27,7 +27,7 @@ html * {
 }
 
 .login {
-	display: block;
+	display: none;
 	color: black;
 	text-align: center;
 	background-color: #f0f0f0;
@@ -42,6 +42,7 @@ html * {
 }
 
 .login-form-box {
+	display: block;
 	background-color: white;
 	width: 450px;
 	height: 250px;
@@ -80,4 +81,43 @@ html * {
 	outline:none;
 	border: none;
     transform: translateY(1px);
+}
+
+.user-box {
+	padding: 20px 20px;
+	font-size: 20px;
+	color: black;
+}
+
+.user-image {
+	width: 80px;
+	height: 80px;
+	border-radius: 50%;
+	border: 2px solid #f0f0f0;
+}
+
+.message {
+}
+
+#mes {
+	border-radius: 10px;
+	margin-top: 20px;
+	width: 64.3%;
+	padding: 7px 12px;
+	position: fixed;
+	display: inline-block;
+	font-size: 16px;
+	right: 135px;
+	bottom: 15px;
+	border: 2px solid #f0f0f0;
+}
+
+.members-box {
+	padding: 20px;
+	font-size: 20px;
+	color: black;
+}
+
+.members-list {
+	padding: 10px 0 0 40px;
 }
