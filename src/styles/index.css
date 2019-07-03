@@ -27,7 +27,7 @@ html * {
 }
 
 .login {
-	display: none;
+	display: block;
 	color: black;
 	text-align: center;
 	background-color: #f0f0f0;
@@ -42,7 +42,6 @@ html * {
 }
 
 .login-form-box {
-	display: block;
 	background-color: white;
 	width: 450px;
 	height: 250px;
@@ -52,7 +51,7 @@ html * {
   	left: 25px;
 }
 
-#name, #nickname {
+#name, #nickName {
 	border-radius: 10px;
 	margin-top: 20px;
 	width: 400px;
@@ -97,6 +96,7 @@ html * {
 }
 
 .message {
+	display: none;
 }
 
 #mes {

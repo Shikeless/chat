@@ -1,30 +1,30 @@
 <div class="users">
 	<div class="user-box">
 		<img class="user-image" src="./src/img/noImage.png">
-		<span id="user-name" style="bottom: 25px; left: 10px; position: relative;"><b>Добро пожаловать!</b>
+		<span id="user-name" style="bottom: 25px; left: 10px; position: relative;"><b>Добро пожаловать!</b></span>
 	</div>
 	<div class="members-box">
-		<span id="memmbers-number"><b>Участники ( )</b></span>
-		<div class="members-list">
+		<span id="member-number"><b>Участники ( )</b></span>
+		<div  id="member-list" class="members-list">
 		</div>
 	</div>
 </div>
 <div class="chat">
-	<ul id="chat-list">
-	</ul>
-	<div class="login">
+	<div id="chat-list">
+	</div>
+	<div id="login" class="login">
 		<b>Авторизация</b>
 		<div class="login-form-box">
 			<input id="name" type="text" name="name" placeholder="ФИО">
-			<input id="nickname" type="text" name="nickname" placeholder="Никнейм">
-    			<button class="button">Войти</button>
+			<input id="nickName" type="text" name="nickname" placeholder="Никнейм">
+    			<button id="log" class="button">Войти</button>
     		</div>
 		</div>
 	</div>
 	<div id="status">
 		offline
 	</div>
-	<div class="message">
+	<div id="message" class="message">
 		<input id="mes" type="text" name="message" placeholder="Введите сообщение">
 		<button id="send" class="button">Отправить</button>
 	</div>
