@@ -1,18 +1,43 @@
-// var http = require('http');
+const fs = require('fs');
+const http = require('http');
+const Websocket = require('websocket').server;
 
-// const server = http.createServer((req, res) => {
-// 	console.log(req.url);
-// 	console.log(req.method);
-// 	console.log(req.headers);
+const index = fs.readFileSync('./index.html');
 
-// 	res.writeHead(200, { 'Content-Type': 'text/plain' });
-// 	res.end('Node.js');
-// }).listen(8080, () => console.log('Сервер работает'));
+const server = http.createServer((req, res) => {
+	res.writeHead(200);
+	res.end(index);
+});
 
-const WebSocket = require('ws');
+server.listen(8080, () => {
+	console.log('listen port 8080');
+});
 
-const server = new WebSocket.server({ port: 8080 });
+const ws = new Websocket({
+	httpServer: server,
+	autoAcceptConnections: false
+});
 
-server.on('connection', ws => {
-	ws.send('Welcome');
+const clients = [];
+
+ws.on('request', req => {
+	const connection = req.accept('', req.origin);
+	clients.push(connection);
+	console.log('Connected' + connection.remoteAddress);
+	console.log(clients);
+	connection.on('message', message => {
+		const dataName = message.type + 'Data';
+		const data = message[dataName];
+		console.dir(message);
+		console.log('Recieved: ' + data);
+		clients.forEach(client => {
+			if (connection !== client) {
+				client.send(data);
+			}
+		});
+	});
+	connection.on('close', (reasonCode, description) => {
+		console.log('Disconnected ' + connection.remoteAddress);
+		console.dir({ reasonCode, description });
+	});
 })
