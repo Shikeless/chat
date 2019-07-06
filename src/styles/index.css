@@ -7,7 +7,7 @@ html * {
 }
 
 .users {
-	background: -webkit-linear-gradient(left,  #f48c42 0%,#ffe4d1 100%);
+	background: -webkit-linear-gradient(left,  #949494 0%,#f0f0f0 100%);
 	position: absolute;
 	color: white;
 	width: 25%;
@@ -17,7 +17,8 @@ html * {
 }
 
 .chat {
-	/*background: white url(./desert.jpg);*/
+	overflow: auto;
+	background: white url(/src/img/desert.jpg);
 	position: absolute;
 	color: black;
 	width: 75%;
@@ -26,22 +27,7 @@ html * {
 	right: 0;
 }
 
-.login {
-	display: block;
-	color: black;
-	text-align: center;
-	background-color: #f0f0f0;
-	/*border: 1px solid;*/
-	width: 500px;
-	height: 300px;
-	border-radius: 10px;
-	position: relative;
-  	top: 15%;
-  	left: 15%;
-  	padding-top: 20px;
-}
-
-.login-form-box {
+.form {
 	background-color: white;
 	width: 450px;
 	height: 250px;
@@ -51,17 +37,70 @@ html * {
   	left: 25px;
 }
 
-#name, #nickName {
+.login-window {
+	display: block;
+	color: black;
+	text-align: center;
+	background-color: #949494;
+	width: 500px;
+	height: 300px;
 	border-radius: 10px;
-	margin-top: 20px;
-	width: 400px;
-	padding: 16px 10px;
-	font-size: 16px;
-	border: 2px solid #f0f0f0;
+	position: relative;
+  	top: 150px;
+  	left: 150px;
+  	padding-top: 20px;
+}
+
+.load-image-layout {
+	border-radius: 10px;
+	border: 4px dashed;
+	background-color: #f0f0f0;
+	width: 160px;
+	height: 160px;
+	position: relative;
+	top: 16px;
+	left: 141px;
+	text-align: center;
+	vertical-align: middle;
+	display: table-cell;
+}
+
+.load-image-layout.highlight {
+ 	border-color: purple;
+}
+
+.msg-block {
+	display: inline-block;
+	background-color: #f0f0f0;
+	max-width:50%;
+	min-width:150px;
+	padding: 5px 15px;
+	margin-left: 15px;
+	margin-top: 15px;
+	border-radius: 10px;
+	float: left;
+	clear: left;
+}
+
+.msg-avatar {
+	width: 90px;
+	height: 90px;
+	border-radius: 50%;
+	object-fit: cover;
+}
+
+.msg-image {
+	float: left;
+}
+
+.msg-msg {
+	float: right;
+	margin-left: 15px;
+	max-width:520px;
+	word-wrap: break-word;
 }
 
 .button {
-	background-color: #f48c42;
 	border: none;
 	color: white;
 	border-radius: 10px;
@@ -72,8 +111,6 @@ html * {
 	position: absolute;
 	display: inline-block;
 	font-size: 16px;
-	right: 15px;
-	bottom: 15px;
 }
 
 .button:active {
@@ -82,24 +119,69 @@ html * {
     transform: translateY(1px);
 }
 
-.user-box {
+#user-box {
+	display:inline-block;
 	padding: 20px 20px;
 	font-size: 20px;
 	color: black;
 }
 
-.user-image {
+#message {
+	display: none;
+}
+
+#load-image-window {
+	display: none;
+	color: black;
+	text-align: center;
+	background-color: #949494;
+	width: 500px;
+	height: 300px;
+	border-radius: 10px;
+	position: relative;
+  	top: 142px;
+  	left: 560px;
+  	padding-top: 20px;
+}
+
+#file-input {
+	display: none;
+}
+
+#name-input, #nick-name-input {
+	border-radius: 10px;
+	margin-top: 20px;
+	width: 400px;
+	padding: 16px 10px;
+	font-size: 16px;
+	border: 2px solid #f0f0f0;
+}
+
+#download-button, #login-button, #send-button {
+	background-color: #949494;
+	right: 15px;
+	bottom: 15px;
+}
+
+#cancel-button {
+	background-color: #949494;
+	right: 128px;
+	bottom: 15px;
+}
+
+#user-name {
+	max-width: 50px;
+	overflow: hidden;
+}
+
+#user-image {
 	width: 80px;
 	height: 80px;
 	border-radius: 50%;
 	border: 2px solid #f0f0f0;
 }
 
-.message {
-	display: none;
-}
-
-#mes {
+#message-input {
 	border-radius: 10px;
 	margin-top: 20px;
 	width: 64.3%;
@@ -109,15 +191,32 @@ html * {
 	font-size: 16px;
 	right: 135px;
 	bottom: 15px;
-	border: 2px solid #f0f0f0;
+	border: 1px solid black;
+	outline: none;
 }
 
-.members-box {
+#members-list {
+	padding: 10px 0 0 40px;
+}
+
+#members-box {
 	padding: 20px;
 	font-size: 20px;
 	color: black;
 }
 
-.members-list {
-	padding: 10px 0 0 40px;
+::-webkit-scrollbar {
+		width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  	background: #f1f1f1; 
+}
+
+::-webkit-scrollbar-thumb {
+  	background: #888; 
+}
+
+::-webkit-scrollbar-thumb:hover {
+  	background: #555; 
 }
